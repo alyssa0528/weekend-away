@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 
 class SearchForm extends Component {
   state = {
-    city: ''
+    query: ''
   }
 
   inputHandler = (event) => {
     this.setState({
-      city: event.target.value
+      query: event.target.value
     })
   }
 
   submitFormHandler = (event) => {
     event.preventDefault();
-
+    this.props.submitQuery(this.state.query)
   }
 
   render() {
